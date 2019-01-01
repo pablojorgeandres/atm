@@ -11,7 +11,7 @@ class Billete {
 }
 
 var caja = [];
-caja.push( new Billete(100, 10));
+caja.push( new Billete(100, 20));
 caja.push( new Billete(50, 10));
 caja.push( new Billete(20, 10));
 caja.push( new Billete(10, 10));
@@ -27,6 +27,8 @@ var showMoney = document.getElementById('show');
 var billEntrega = [];
 var x = document.getElementById('extraer');
 x.addEventListener('click', entregarDinero);
+var statBox = document.getElementById('stat');
+statBox.innerHTML = 'Total money: ' + cajaTotal + '<br><span>Only multiples of 5 please.</span>';
 
 function entregarDinero() {
     var dineroExtraer = document.getElementById('dinero').value;
@@ -52,15 +54,18 @@ function entregarDinero() {
             }
             for( e of billEntrega){
                 if(e.cantidad){
-                    //showMoney.innerHTML += e.cantidad + ' billetes de ' + e.valor + '<br>';
                     for (i = 0; i < e.cantidad; i++) {
                         showMoney.appendChild(e.image.cloneNode(true));
                     }
                 }
             }
+            statBox.innerHTML = '<span>Do not forget to take your money!</span>';
             cajaTotal = cajaTotal - restarCaja;
+            setInterval(function(){ statBox.innerHTML = '<span class="thanks">Thanks for choosing ATM.<br> Would you like to make another transaction?</span>' }, 3000);
+            setInterval(function(){ statBox.innerHTML = 'Total money: ' + cajaTotal + '<br><span>Only multiples of 5 please.</span>' }, 6000);
         } else {
-            showMoney.innerHTML = 'I`m sorry, the money inside of me is not enough to cover your request.';
+            statBox.innerHTML = '<span class="no-money">I`m sorry, the money inside of me is not enough to cover your request.<span>';
+            setInterval(function(){ statBox.innerHTML = 'Total money: ' + cajaTotal + '<br><span>Only multiples of 5 please.</span>' }, 5000);
         }
         billEntrega = [];
     }
