@@ -62,7 +62,7 @@ function entregarDinero() {
             statBox.innerHTML = '<span>Do not forget to take your money!</span>';
             cajaTotal = cajaTotal - restarCaja;
             setInterval(function(){ statBox.innerHTML = '<span class="thanks">Thanks for choosing ATM.<br> Would you like to make another transaction?</span>' }, 3000);
-            setInterval(function(){ statBox.innerHTML = 'Total money: ' + cajaTotal + '<br><span>Only multiples of 5 please.</span>' }, 6000);
+            setInterval(function(){ statBox.innerHTML = 'Total money: $' + cajaTotal + '<br><span>Only multiples of 5 please.</span>' }, 6000);
         } else {
             statBox.innerHTML = '<span class="no-money">I`m sorry, the money inside of me is not enough to cover your request.<span>';
             setInterval(function(){ statBox.innerHTML = 'Total money: ' + cajaTotal + '<br><span>Only multiples of 5 please.</span>' }, 5000);
