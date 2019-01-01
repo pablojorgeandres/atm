@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cajero</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        body > p:nth-child(3){
+            font-size: 10px;
+        }
+        p {
+            margin: 3px;
+        }
+        #show {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <img src="images/atmII.jpg" alt="ATM" width="350px">
+    </p>
+    <p>How much would you need?</p>
+    <p>Only multiples of 5 please.</p>
+    <p>
+        <input type="number" id="dinero">
+        <input type="submit" id="extraer">
+    </p>
+    <div id="images">
+        <ul id="show">
+        </ul>
+    </div>
+    <script src="functions.js"></script>
+</body>
+</html>
